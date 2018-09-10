@@ -45,4 +45,10 @@ public class MinHeap {
     private int getParent(int index) {
         return this.array[getParentIndex(index)];
     }
+
+    private void swap(int indexOne, int indexTwo) {
+        int temp = this.array[indexOne];
+        this.array[indexOne] = this.array[indexTwo];
+        this.array[indexTwo] = temp;
+    }
 }
