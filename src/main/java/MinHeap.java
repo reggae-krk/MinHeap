@@ -41,4 +41,8 @@ public class MinHeap {
     private int getRightChild(int index) {
         return this.array[getRightChildIndex(index)];
     }
+
+    private int getParent(int index) {
+        return this.array[getParentIndex(index)];
+    }
 }
