@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MinHeap {
 
     private int capacity;
@@ -50,5 +52,12 @@ public class MinHeap {
         int temp = this.array[indexOne];
         this.array[indexOne] = this.array[indexTwo];
         this.array[indexTwo] = temp;
+    }
+
+    private void doubleCapacity() {
+        if (this.size == this.capacity) {
+            this.array = Arrays.copyOf(this.array, this.capacity * 2);
+            this.capacity *= 2;
+        }
     }
 }
