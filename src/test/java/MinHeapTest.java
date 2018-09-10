@@ -26,4 +26,14 @@ class MinHeapTest {
 
         assertTrue(Arrays.equals(expectedArray, minHeap.getArray()));
     }
+
+    @Test
+    void testPool() {
+        MinHeap minHeap = new MinHeap(2);
+
+        minHeap.add(6);
+        minHeap.add(12);
+
+        assertEquals(6, minHeap.pool());
+    }
 }
