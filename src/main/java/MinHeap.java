@@ -74,4 +74,11 @@ public class MinHeap {
         heapifyDown();
         return elementToRemove;
     }
+
+    public void add(int element) {
+        doubleCapacity();
+        this.array[size] = element;
+        this.size++;
+        heapifyUp();
+    }
 }
