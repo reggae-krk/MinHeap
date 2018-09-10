@@ -6,46 +6,43 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MinHeapTest {
 
+    private MinHeap createMinHeap() {
+        MinHeap minHeap = new MinHeap(2);
+        minHeap.add(6);
+        minHeap.add(13);
+        minHeap.add(5);
+        minHeap.add(11);
+
+        return minHeap;
+    }
+
     @Test
     void testPeek() {
-        MinHeap minHeap = new MinHeap(10);
-
-        minHeap.add(6);
+        MinHeap minHeap = createMinHeap();
         int[] array = minHeap.getArray();
 
-        assertEquals(6, array[0]);
+        assertEquals(5, array[0]);
     }
 
     @Test
     void testAdd() {
-        MinHeap minHeap = new MinHeap(2);
-        int[] expectedArray = {6, 12};
-
-        minHeap.add(6);
-        minHeap.add(12);
+        MinHeap minHeap = createMinHeap();
+        int[] expectedArray = {5, 11, 6, 13};
 
         assertTrue(Arrays.equals(expectedArray, minHeap.getArray()));
     }
 
     @Test
     void testPool() {
-        MinHeap minHeap = new MinHeap(2);
+        MinHeap minHeap = createMinHeap();
 
-        minHeap.add(6);
-        minHeap.add(12);
-
-        assertEquals(6, minHeap.pool());
+        assertEquals(5, minHeap.pool());
     }
 
     @Test
     void testIfAddIntsGoesInRightOrder() {
-        MinHeap minHeap = new MinHeap(2);
+        MinHeap minHeap = createMinHeap();
         int[] expectedArray = {5, 11, 6, 13};
-
-        minHeap.add(6);
-        minHeap.add(13);
-        minHeap.add(5);
-        minHeap.add(11);
 
         assertTrue(Arrays.equals(expectedArray, minHeap.getArray()));
     }
