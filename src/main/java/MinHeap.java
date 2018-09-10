@@ -81,4 +81,12 @@ public class MinHeap {
         this.size++;
         heapifyUp();
     }
+
+    public void heapifyUp() {
+        int index = this.size -1;
+        while (hasParent(index) && getParent(index) > this.array[index]) {
+            swap(getParentIndex(index), index);
+            index = getParentIndex(index);
+        }
+    }
 }
