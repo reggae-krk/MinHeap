@@ -36,4 +36,17 @@ class MinHeapTest {
 
         assertEquals(6, minHeap.pool());
     }
+
+    @Test
+    void testIfAddIntsGoesInRightOrder() {
+        MinHeap minHeap = new MinHeap(2);
+        int[] expectedArray = {5, 11, 6, 13};
+
+        minHeap.add(6);
+        minHeap.add(13);
+        minHeap.add(5);
+        minHeap.add(11);
+
+        assertTrue(Arrays.equals(expectedArray, minHeap.getArray()));
+    }
 }
