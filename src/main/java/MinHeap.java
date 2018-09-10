@@ -89,4 +89,19 @@ public class MinHeap {
             index = getParentIndex(index);
         }
     }
+
+    public void heapifyDown() {
+        int index = 0;
+        while (hasLeftChild(index)) {
+            int smallerChildIndex = getLeftChildIndex(index);
+            if(hasRightChild(index) && getRightChild(index) < getLeftChild(index)) {
+                smallerChildIndex = getRightChildIndex(index);
+            }
+            if (this.array[index] < this.array[smallerChildIndex]) break;
+            else {
+                swap(index, smallerChildIndex);
+            }
+            index = smallerChildIndex;
+        }
+    }
 }
