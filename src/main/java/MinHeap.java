@@ -37,4 +37,8 @@ public class MinHeap {
     private int getLeftChild(int index) {
         return this.array[getLeftChildIndex(index)];
     }
+
+    private int getRightChild(int index) {
+        return this.array[getRightChildIndex(index)];
+    }
 }
