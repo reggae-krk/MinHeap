@@ -25,4 +25,8 @@ public class MinHeap {
     private boolean hasLeftChild(int index) {
         return getLeftChildIndex(index) < size;
     }
+
+    private boolean hasRightChild(int index) {
+        return getRightChildIndex(index) < size;
+    }
 }
