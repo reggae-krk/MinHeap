@@ -90,6 +90,21 @@ public class MaxHeap {
         }
     }
 
+    public void heapifyDown() {
+        int index = 0;
+        while (hasLeftChild(index)) {
+            int largerChildIndex = getLeftChildIndex(index);
+            if(hasRightChild(index) && getRightChild(index) > getLeftChild(index)) {
+                largerChildIndex = getRightChildIndex(index);
+            }
+            if (this.array[index] < this.array[largerChildIndex]) break;
+            else {
+                swap(index, largerChildIndex);
+            }
+            index = largerChildIndex;
+        }
+    }
+
     public int[] getArray() {
         return array;
     }
