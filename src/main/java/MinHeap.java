@@ -104,4 +104,8 @@ public class MinHeap {
             index = smallerChildIndex;
         }
     }
+
+    public int[] getArray() {
+        return array;
+    }
 }
