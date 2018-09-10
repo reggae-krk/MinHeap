@@ -21,4 +21,8 @@ public class MinHeap {
         if (childIndex == 0) return 0;
         return (childIndex - 1) / 2;
     }
+
+    private boolean hasLeftChild(int index) {
+        return getLeftChildIndex(index) < size;
+    }
 }
