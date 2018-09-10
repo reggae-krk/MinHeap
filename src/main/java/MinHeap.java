@@ -65,4 +65,13 @@ public class MinHeap {
         if (this.size == 0) throw new IllegalStateException();
         return this.array[0];
     }
+
+    public int pool() {
+        if (this.size == 0) throw new IllegalStateException();
+        int elementToRemove = this.array[0];
+        this.array[0] = this.array[size - 1];
+        this.size--;
+        heapifyDown();
+        return elementToRemove;
+    }
 }
