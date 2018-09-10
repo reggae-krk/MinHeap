@@ -60,4 +60,9 @@ public class MinHeap {
             this.capacity *= 2;
         }
     }
+
+    public int peek() {
+        if (this.size == 0) throw new IllegalStateException();
+        return this.array[0];
+    }
 }
