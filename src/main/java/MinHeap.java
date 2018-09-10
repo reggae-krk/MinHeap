@@ -33,4 +33,8 @@ public class MinHeap {
     private boolean hasParent(int index) {
         return getParentIndex(index) >= 0;
     }
+
+    private int getLeftChild(int index) {
+        return this.array[getLeftChildIndex(index)];
+    }
 }
