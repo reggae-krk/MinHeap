@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MinHeapTest {
@@ -12,5 +14,16 @@ class MinHeapTest {
         int[] array = minHeap.getArray();
 
         assertEquals(6, array[0]);
+    }
+
+    @Test
+    void testAdd() {
+        MinHeap minHeap = new MinHeap(2);
+        int[] expectedArray = {6, 12};
+
+        minHeap.add(6);
+        minHeap.add(12);
+
+        assertTrue(Arrays.equals(expectedArray, minHeap.getArray()));
     }
 }
